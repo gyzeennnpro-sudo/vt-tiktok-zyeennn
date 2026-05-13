@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>TikTok</title>
+  </head>
+
+  <body>
+
+    <!-- TOP NAV (cukup 1x aja, jangan diulang tiap video) -->
+    <div class="top-nav">
+      <div class="nav-left">
+        <div class="live-container">
+          <i class="fa-brands fa-bilibili"></i>
+          <span class="live-text">LIVE</span>
+        </div>
+      </div>
+
+      <div class="nav-center">
+        <span>Jelajahi</span>
+
+        <div class="badge-container">
+          <span>Teman</span>
+          <span class="badge">68</span>
+        </div>
+
+        <span>Mengikuti</span>
+
+        <div class="active-menu">
+          <span>Saran</span>
+          <div class="underline"></div>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <!-- FEED -->
+    <div class="feed-container" id="feedContainer">
+
+      <!-- =======================================
+      ============== VIDEO 1 ====================
+      ======================================== -->
+
+      <div class="video-item">
+        <div class="container">
+
+          <video loop muted autoplay playsinline>
+            <source src="LOADING_TIKTOK.mp4" type="video/mp4">
+          </video>
+
+          <div class="pause-overlay">
+            <i class="fa-solid fa-play"></i>
+          </div>
+
+          <i class="fa-solid fa-heart like"></i>
+
+          <div class="sidebar">
+
+            <div class="profile-wrap">
+              <img
+                src="jaket.jpg" 
+                class="profile" 
+              />
+              <div class="follow">+</div>
+            </div>
+
+            <div class="icon-box like-btn">
+              <i class="fa-solid fa-heart"></i>
+              <span>87.7K</span>
+            </div>
+
+            <div class="icon-box" onclick="openComments(event)">
+              <i class="fa-solid fa-comment"></i>
+              <span>290</span>
+            </div>
+
+            <div class="icon-box save-btn">
+              <i class="fa-solid fa-bookmark"></i>
+              <span>7.1K</span>
+            </div>
+
+            <div class="icon-box">
+              <i class="fa-solid fa-share"></i>
+              <span>5.0K</span>
+            </div>
+
+            <div class="disc">
+              <img src="kaleb.png">
+            </div>
+
+          </div>
+
+          <div class="bottom">
+
+            <div class="username">Zyeennn 🚀🚀</div>
+
+            <div class="caption"
+              data-short="Kalau cari jaket yang nyaman tapi <span class='hashtag'>#outfitdaily</span>..."
+              data-full="Kalau cari jaket yang nyaman tapi tetap kece, ini jawabannya 😎 
+                        Modelnya simple modern, cocok dipakai sehari-hari dan bikin penampilan makin effortless. Bonusnya 
+                        nyaman dipakai seharian ✨ <span class='hashtag'>#outfitdaily</span> <span class='hashtag'>#outfitdaily #fashionstyle #ootdharian #jaketcasual #racuntiktok #affiliateindonesia #fashionmurah</span>"
+            >
+              my bini Gweh inimah😋 
+              <span class="hashtag">#anime</span>...
+
+              <span class="more" onclick="toggleText(event)">
+                lebih banyak
+              </span>
+            </div>
+
+          </div>
+
+          <div class="music-bar">
+            <div class="music-text">
+              🎵 Berisi: It's only me - Kaleb J...
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- =======================================
+      ============== VIDEO 2 ====================
+      ======================================== -->
+
+      <div class="video-item">
+
+        <div class="container">
+
+          <video loop muted autoplay playsinline>
+            <source src="LOADING_TIKTOK.mp4" type="video/mp4">
+          </video>
+
+          <div class="pause-overlay">
+            <i class="fa-solid fa-play"></i>
+          </div>
+
+          <i class="fa-solid fa-heart like"></i>
+
+          <div class="sidebar">
+
+            <div class="profile-wrap">
+              <img
+                src="luppy.jpg" 
+                class="profile"
+              />
+              <div class="follow">+</div>
+            </div>
+
+            <div class="icon-box like-btn">
+              <i class="fa-solid fa-heart"></i>
+              <span>57.1K</span>
+            </div>
+
+            <div class="icon-box" onclick="openComments(event)">
+              <i class="fa-solid fa-comment"></i>
+              <span>293</span>
+            </div>
+
+            <div class="icon-box save-btn">
+              <i class="fa-solid fa-bookmark"></i>
+              <span>12.9K</span>
+            </div>
+
+            <div class="icon-box">
+              <i class="fa-solid fa-share"></i>
+              <span>8.2K</span>
+            </div>
+
+            <div class="disc">
+              <img src="jbiber.png">
+            </div>
+
+          </div>
+
+          <div class="bottom">
+
+            <div class="username">who's dinnnn</div>
+
+            <div class="caption"
+              data-short="Another day another vibe <span class='hashtag'>#sadvibes</span>..."
+              data-full="Another day another vibe <span class='hashtag'>#sadvibes</span> <span class='hashtag'>#trending</span> <span class='hashtag'>#fyp</span>"
+            >
+              Another day another vibe 
+              <span class="hashtag">#sadvibes</span>...
+
+              <span class="more" onclick="toggleText(event)">
+                lebih banyak
+              </span>
+            </div>
+
+          </div>
+
+          <div class="music-bar">
+            <div class="music-text">
+              🎵 Berisi: That should be me...
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+
+      <a href="#" class="nav-item active">
+        <i class="fa-solid fa-house"></i>
+        <span>Beranda</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span>Toko</span>
+      </a>
+
+      <div class="add-btn-wrapper">
+        <div class="add-btn">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+      </div>
+
+      <a href="#" class="nav-item">
+        <div class="icon-container">
+          <i class="fa-regular fa-comment-dots"></i>
+          <span class="badge">28</span>
+        </div>
+        <span>Kotak Masuk</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <div class="icon-container">
+          <i class="fa-regular fa-user"></i>
+          <span class="dot"></span>
+        </div>
+        <span>Profil</span>
+      </a>
+
+    </nav>
+
+    <!-- COMMENTS -->
+    <div class="comments" id="comments">
+
+      <div style="text-align: center;">
+        Komentar
+      </div>
+
+      <div class="tiktok-loader">
+        <div class="circle red"></div>
+        <div class="circle blue"></div>
+      </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+  </body>
+</html>

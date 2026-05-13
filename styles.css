@@ -1,0 +1,568 @@
+:root {
+  --outline: 1px solid tomato;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+.feed-container {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  height: calc(100dvh - 70px);
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  padding-top: 0;
+}
+
+.feed-container::-webkit-scrollbar {
+  display: none;
+}
+
+.feed-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* Container Utama Navigasi */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin-top: 15px; /* Sesuai request */
+  color: white;
+  font-family: 'Arial', sans-serif;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+/* Bagian Kiri (Live) */
+.nav-left .live-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.nav-left i {
+  font-size: 22px;
+}
+
+/* Bagian Tengah (Menu) */
+.nav-center {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7); /* Warna agak pudar untuk menu tidak aktif */
+}
+
+.nav-center span {
+  cursor: pointer;
+}
+
+/* Badge Notifikasi Angka 68 */
+.badge-container {
+  position: relative;
+  border: none;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -15px;
+  background-color: #fe2c55;
+  color: white;
+  font-size: 9px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: none;
+}
+
+/* Menu Aktif (Saran) */
+.active-menu {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+}
+
+.active-menu span {
+  font-size: 18px
+}
+
+.underline {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+/* Bagian Kanan (Search) */
+.nav-right i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.video-item {
+  width: 100vw;
+  height: calc(100vh - 70px);
+  height: calc(100dvh - 70px);
+  position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  overflow: hidden;
+}
+
+.top-bar {
+  position:absolute;
+  top:25px;
+  width:100%;
+  text-align:center;
+  font-size:14px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.top-bar .active {
+  opacity:1;
+  font-weight:bold;
+}
+
+.pembatas {
+    font-size: 16px;
+    margin: 0 8px;
+    opacity:0.5;
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.search-icon:hover {
+  opacity: 1;
+}
+
+/* VIDEO */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: black;
+}
+
+video {
+  width: 95%; /* pengatur besar kecilnya loader */
+  height: 95%; /* pengatur besar kecilnya loader */
+  object-fit: contain;
+  border-radius: 15px; /* opsional biar cakep */
+}
+
+/* RIGHT SIDEBAR */
+.sidebar {
+  position: absolute;
+  right: 8px;
+  bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.icon-box.liked i {
+  color: red;
+}
+
+.icon-box.saved i {
+  color: yellow;
+}
+
+.icon-box i {
+  font-size: 26px;
+}
+
+.icon-box span {
+  font-size: 13px;
+}
+
+/* PROFILE */
+.profile-wrap {
+  position: relative;
+}
+
+.profile {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.follow {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* BOTTOM TEXT */
+.bottom {
+  position: absolute;
+  bottom: 110px;
+  left: 10px;
+  width: 75%;
+  /* background-color: tomato; */
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.caption {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.more {
+  color: rgb(225, 217, 217);
+  cursor: pointer;
+}
+
+.hashtag {
+  font-weight: bold;
+}
+
+/* COMMENTS */
+.comments {
+  position: fixed;
+  bottom: -100%;
+  width: 100%;
+  height: 50%;
+  background: #111;
+  border-radius: 20px 20px 0 0;
+  transition: 0.4s;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.comments.active {
+  bottom: 0;
+}
+
+/* TIKTOK LOADER */
+.loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 60px auto;
+}
+
+.loader div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: bounce 1s infinite;
+}
+
+.red {
+  background: red;
+  left: -5px;
+}
+
+.blue {
+  background: cyan;
+  left: 5px;
+  animation-delay: 0.5s;
+}
+
+@keyframes bounce {
+  0%,100% {transform: scale(0.8);}
+  50% {transform: scale(1.2);}
+}
+
+/* LIKE ANIM */
+.like {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 80px;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+}
+
+.like.active {
+  animation: pop 0.6s;
+}
+
+@keyframes pop {
+  50% {transform: translate(-50%, -50%) scale(1.2); opacity:1;}
+  100% {opacity:0;}
+}
+
+.hastag {
+    font-weight: 800;
+}
+
+.pause-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 72px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pause-overlay.active {
+  opacity: 1;
+}
+
+/* MUSIC BAR */
+.music-bar {
+    display: flex;
+    position: absolute;
+    bottom: 75px;
+    left: 10px;
+    right: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+/* TEXT JALAN */
+.music-text {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.disc {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: spin 10s linear infinite;
+}
+
+.disc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Container loader agar berada di tengah */
+.tiktok-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  z-index: 1000;
+}
+
+/* Base style untuk kedua bulatan */
+.circle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  animation: tiktok-move 1s infinite ease-in-out;
+}
+
+/* Warna Merah Khas TikTok */
+.red {
+  background-color: #ff0050;
+  left: 0;
+}
+
+/* Warna Biru Khas TikTok */
+.blue {
+  background-color: #00f2ea;
+  right: 0;
+  animation-delay: 0.5s; /* Delay agar gerakannya berlawanan */
+}
+
+/* Keyframes Animasi */
+@keyframes tiktok-move {
+  0%, 100% {
+    transform: scale(1);
+    z-index: 1;
+  }
+  50% {
+    transform: scale(1.2); /* Membesar sedikit saat di tengah */
+    left: 12px; /* Posisi saat kedua bulatan bertemu */
+    z-index: 2;
+  }
+}
+
+/* Opsional: Efek Blend agar warna menyatu saat bertumpuk */
+.tiktok-loader {
+  mix-blend-mode: screen;
+}
+
+.bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 101%;
+            background-color: #000000; /* Latar belakang hitam */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px 15px 15px; /* Padding disesuaikan */
+            box-sizing: border-box;
+            border-top: 1px solid #222; /* Garis batas tipis di atas */
+            z-index: 9999; /* Agar selalu tampil di atas konten lain */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Item Navigasi (Teks & Icon) */
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #888888; /* Warna abu-abu untuk menu tidak aktif */
+            text-decoration: none;
+            flex: 1;
+            cursor: pointer;
+        }
+
+        /* Item Aktif (Contoh: Beranda) */
+        .nav-item.active {
+            color: #ffffff;
+        }
+
+        /* Ukuran Icon dan Jarak */
+        .nav-item i {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        .nav-item span {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Container khusus untuk icon yang punya notifikasi */
+        .icon-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Badge Notifikasi Angka (Kotak Masuk) */
+        .badge {
+            position: absolute;
+            top: -6px;
+            right: -10px;
+            background-color: #fe2c55; /* Merah khas */
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 12px;
+            border: 2px solid #000; /* Border hitam agar terlihat "memotong" icon di belakangnya */
+        }
+
+        /* Badge Titik Merah (Profil) */
+        .dot {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            background-color: #fe2c55;
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+
+        /* --- STYLING TOMBOL TAMBAH (TENGAH) --- */
+        .add-btn-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .add-btn {
+            width: 45px;
+            height: 30px;
+            background-color: #ffffff;
+            color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            position: relative;
+            z-index: 5;
+            border-radius: 10px;
+            border-left: 4px solid #fe2c55;
+            border-right: 4px solid #25f4ee;
+        }
+
+        
