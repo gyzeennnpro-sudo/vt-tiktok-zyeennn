@@ -47,6 +47,20 @@ videoItems.forEach((item) => {
         lastTap = now;
     });
 }
+
+if (likeBtn) {
+    likeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        likeBtn.classList.toggle("liked");
+    });
+}
+
+if (saveBtn) {
+    saveBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        saveBtn.classList.toggle("saved");
+    });
+}
 });
 
 console.log("✅Script loaded successfully.");
